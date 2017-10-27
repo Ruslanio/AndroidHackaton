@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AndroidHackaton</string>
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="sign_in">Войти</string>
+    <string name="sign_up">Зарегестрироваться</string>
+    <string name="Autorize">Авторизация</string>
+</resources>
