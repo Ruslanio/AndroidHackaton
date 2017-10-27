@@ -11,7 +11,7 @@ public class RegistrationResponse {
     private String responseData;
     @SerializedName("error")
     @Expose
-    private Object error;
+    private String error;
 
     public String getResponseData() {
         return responseData;
@@ -21,11 +21,11 @@ public class RegistrationResponse {
         this.responseData = responseData;
     }
 
-    public Object getError() {
+    public String getError() {
         return error;
     }
 
-    public void setError(Object error) {
+    public void setError(String error) {
         this.error = error;
     }
 

@@ -17,6 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class AuthorizationManager {
+    public static final String KEY_TOKEN = "key_token";
     private static final String BASE_URL = "https://dtp-hack.herokuapp.com";
     private final CallRegistration mCallRegistration;
 

@@ -1,5 +1,7 @@
 package com.example.ruslanio.androidhackaton;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,7 +14,8 @@ import com.example.ruslanio.androidhackaton.api.authorization.RegistrationBodyRe
 
 import butterknife.BindView;
 
-public class RegistrationActivity extends BaseActivity implements View.OnClickListener{
+public class RegistrationActivity extends BaseActivity implements View.OnClickListener {
+
 
     @BindView(R.id.btn_register)
     Button mRegister;
@@ -30,6 +33,8 @@ public class RegistrationActivity extends BaseActivity implements View.OnClickLi
     @BindView(R.id.et_password)
     TextInputEditText mPassword;
 
+    private SharedPreferences mPreferences;
+
 
     private AuthorizationManager mAuthorizationManager;
 
@@ -46,22 +51,28 @@ public class RegistrationActivity extends BaseActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btn_register:
                 mAuthorizationManager.register(getData())
                         .subscribe(response -> {
-
-                                    saveToken(response.getResponseData());
+                                    if (response.getResponseData() == null) {
+                                        showSnackbar(response.getError());
+                                    } else {
+                                        saveToken(response.getResponseData());
+                                        Intent intent = new Intent(RegistrationActivity.this, HomeActivity.class);
+                                        startActivity(intent);
+                                    }
                                 }
-                                ,error-> {
-                                    showSnackbar("UNKNOWN ERROR");
-                                });
+                        );
                 break;
         }
     }
 
-    private void saveToken(String token){
-        showSnackbar(token);
+    private void saveToken(String token) {
+        mPreferences = getSharedPreferences(MAIN_PREF_NAME,MODE_PRIVATE);
+        SharedPreferences.Editor editor = mPreferences.edit();
+        editor.putString(AuthorizationManager.KEY_TOKEN,token);
+        editor.commit();
     }
 
     private RegistrationBodyRequest getData() {
