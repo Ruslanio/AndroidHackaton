@@ -1,6 +1,7 @@
 package com.example.ruslanio.androidhackaton.abstracts;
 
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.design.widget.BaseTransientBottomBar;
@@ -19,6 +20,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(getLayout());
         ButterKnife.bind(this);
         onInit();
     }
@@ -26,6 +28,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected abstract void onInit();
 
+    @LayoutRes
+    protected abstract int getLayout();
 
     public void showToast(@StringRes int text) {
         Toast.makeText(this, text, Toast.LENGTH_LONG).show();

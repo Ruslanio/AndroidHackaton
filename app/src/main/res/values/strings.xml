@@ -5,4 +5,10 @@
     <string name="sign_in">Войти</string>
     <string name="sign_up">Зарегестрироваться</string>
     <string name="Autorize">Авторизация</string>
+    <string name="registration">Регистрация</string>
+    <string name="email">Email</string>
+    <string name="first_name">Имя</string>
+    <string name="last_name">Фамилия</string>
+    <string name="middle_name">Отчество</string>
+    <string name="phone">Телефон</string>
 </resources>
