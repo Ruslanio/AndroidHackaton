@@ -18,6 +18,8 @@ import butterknife.ButterKnife;
 public abstract class BaseActivity extends AppCompatActivity {
 
     protected static final String MAIN_PREF_NAME = "main_pref";
+    public static final String IS_REGISTERED_KEY = "is_registered";
+    public static final String IS_LOGGED_KEY = "is_logged";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

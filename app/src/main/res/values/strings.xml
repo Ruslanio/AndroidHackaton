@@ -11,4 +11,6 @@
     <string name="last_name">Фамилия</string>
     <string name="middle_name">Отчество</string>
     <string name="phone">Телефон</string>
+
+    <string name="signin_error">Ошибка авторизации. Попробуйте снова!</string>
 </resources>

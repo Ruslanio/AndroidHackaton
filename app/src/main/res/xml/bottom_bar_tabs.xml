@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tabs>
-    <tab
+<!--    <tab
         id="@+id/tab_favorites"
         icon="@drawable/ic_favorites"
         title="Favorites" />
@@ -11,5 +11,5 @@
     <tab
         id="@+id/tab_friends"
         icon="@drawable/ic_friends"
-        title="Friends" />
+        title="Friends" />-->
 </tabs>

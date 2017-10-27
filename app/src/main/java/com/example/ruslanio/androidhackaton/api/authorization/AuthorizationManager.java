@@ -1,6 +1,7 @@
 package com.example.ruslanio.androidhackaton.api.authorization;
 
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.RegistrationResponse;
+import com.example.ruslanio.androidhackaton.api.authorization.pojo.SignInResponse;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.util.concurrent.TimeUnit;
@@ -40,5 +41,9 @@ public class AuthorizationManager {
 
     public Observable<RegistrationResponse> register(RegistrationBodyRequest registrationBodyRequest){
         return mCallRegistration.register(registrationBodyRequest);
+    }
+
+    public Observable<SignInResponse> signIn(SignInRequest request) {
+        return mCallRegistration.signIn(request);
     }
 }
