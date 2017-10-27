@@ -3,8 +3,6 @@ package com.example.ruslanio.androidhackaton;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.design.widget.TextInputEditText;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
@@ -59,7 +57,7 @@ public class RegistrationActivity extends BaseActivity implements View.OnClickLi
                                         showSnackbar(response.getError());
                                     } else {
                                         saveToken(response.getResponseData());
-                                        Intent intent = new Intent(RegistrationActivity.this, HomeActivity.class);
+                                        Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
                                         startActivity(intent);
                                     }
                                 }

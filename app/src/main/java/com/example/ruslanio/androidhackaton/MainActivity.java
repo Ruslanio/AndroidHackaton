@@ -1,16 +1,11 @@
 package com.example.ruslanio.androidhackaton;
 
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.TextView;
 
 import com.example.ruslanio.androidhackaton.abstracts.BaseActivity;
 import com.example.ruslanio.androidhackaton.api.authorization.AuthorizationManager;
 
-import butterknife.BindView;
-
-public class HomeActivity extends BaseActivity {
+public class MainActivity extends BaseActivity {
 
     private SharedPreferences mPreferences;
 
@@ -20,7 +15,7 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     protected int getLayout() {
-        return R.layout.activity_home;
+        return R.layout.activity_main;
     }
 
     private String getToken(){
