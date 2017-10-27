@@ -1,4 +1,4 @@
-package com.example.ruslanio.androidhackaton.api.authorization;
+package com.example.ruslanio.androidhackaton.api.authorization.models;
 
 /**
  * Created by VladislavTitov on 27.10.2017.

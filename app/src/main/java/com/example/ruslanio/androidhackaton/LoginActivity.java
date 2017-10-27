@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.ruslanio.androidhackaton.abstracts.BaseActivity;
-import com.example.ruslanio.androidhackaton.api.authorization.AuthorizationManager;
-import com.example.ruslanio.androidhackaton.api.authorization.SignInRequest;
+import com.example.ruslanio.androidhackaton.api.authorization.NetworkManager;
+import com.example.ruslanio.androidhackaton.api.authorization.models.SignInRequest;
 
 import butterknife.BindView;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -45,6 +45,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_sign_in:
+                Intent intent1 = new Intent(LoginActivity.this,MainActivity.class);
+                startActivity(intent1);
                 signIn();
                 break;
             case R.id.btn_sign_up:
@@ -56,7 +58,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     private void signIn() {
         SignInRequest request = new SignInRequest(mLogin.getText().toString(), mRegistration.getText().toString());
-        AuthorizationManager manager = new AuthorizationManager();
+        NetworkManager manager = new NetworkManager();
         manager.signIn(request)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(signInResponse -> {
@@ -81,7 +83,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private void saveToken(String token) {
         SharedPreferences preferences = getSharedPreferences(MAIN_PREF_NAME, MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString(AuthorizationManager.KEY_TOKEN, token);
+        editor.putString(NetworkManager.KEY_TOKEN, token);
         editor.commit();
     }
 
