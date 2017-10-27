@@ -13,6 +13,13 @@ public class PersonalView extends BaseFragment {
         return R.layout.fragment_personal;
     }
 
+    @Override
+    protected void onInit() {
+        super.onInit();
+
+
+    }
+
     public static PersonalView getInstance(){
         return new PersonalView();
     }

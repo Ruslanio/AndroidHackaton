@@ -1,16 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:padding="@dimen/tab_item_padding"
-              android:background="@color/grey_background">
+              android:background="@color/grey_background"
+              android:orientation="vertical"
+              android:padding="@dimen/tab_item_padding">
 
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_last_name"
+                    style="@style/Label.Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Мирхусаинов"
+                    android:textSize="@dimen/large_text_size"/>
+
+                <TextView
+                    android:id="@+id/tv_first_name"
+                    style="@style/Label.Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Руслан"
+                    android:textSize="@dimen/large_text_size"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_middle_name"
+                style="@style/Label.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Радикович"
+                android:textSize="@dimen/large_text_size"/>
+
+
+            <include layout="@layout/strip"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Label.Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/birth_date"/>
+
+                <TextView
+                    android:id="@+id/tv_user_birth_date"
+                    style="@style/Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="28.05.1997"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Label.Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/birth_place"/>
+
+                <TextView
+                    android:id="@+id/tv_user_birth_place"
+                    style="@style/Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="г.Казань"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Label.Bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/citizinship"/>
+
+                <TextView
+                    android:id="@+id/tv_user_citizinship"
+                    style="@style/Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="РФ"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Label.Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/drive_expirience"/>
+
+                <TextView
+                    android:id="@+id/tv_user_drive_expirience"
+                    style="@style/Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Бешеный"/>
+
+            </LinearLayout>
+
+            <include layout="@layout/strip"/>
+
+            <TextView
+                style="@style/Label.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/passport"
+                android:textSize="@dimen/large_text_size"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Label.Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pass_number"/>
+
+                <TextView
+                    android:id="@+id/tv_user_pass_number"
+                    style="@style/Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="073677"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Label.Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pass_serial"/>
+
+                <TextView
+                    android:id="@+id/tv_user_pass_serial"
+                    style="@style/Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9029"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Label.Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pass_date"/>
+
+                <TextView
+                    android:id="@+id/tv_user_pass_date"
+                    style="@style/Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12.03.1997"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
     </android.support.v7.widget.CardView>
 
 </LinearLayout>

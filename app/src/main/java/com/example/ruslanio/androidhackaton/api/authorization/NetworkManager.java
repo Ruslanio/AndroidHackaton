@@ -5,6 +5,7 @@ import com.example.ruslanio.androidhackaton.api.authorization.models.SignInReque
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.RegistrationResponse;
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.SignInResponse;
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.cars.CarsResponse;
+import com.example.ruslanio.androidhackaton.api.authorization.pojo.user.UserResponse;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.util.concurrent.TimeUnit;
@@ -52,5 +53,9 @@ public class NetworkManager {
 
     public Observable<CarsResponse> getCars(String token){
         return mNetworkCalls.getCars(token);
+    }
+
+    public Observable<UserResponse> getUser(String token){
+        return mNetworkCalls.getUser(token);
     }
 }

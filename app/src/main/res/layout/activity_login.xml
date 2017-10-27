@@ -51,7 +51,6 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
                 android:imeActionId="@+id/et_login"
-                android:inputType="numberPassword|textPassword"
                 android:lines="1"/>
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>

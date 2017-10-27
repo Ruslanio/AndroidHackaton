@@ -27,4 +27,12 @@
     <string name="pts_from_who">ПТС кем выдан:</string>
 
     <string name="signin_error">Ошибка авторизации. Попробуйте снова!</string>
+    <string name="birth_date">Дата рождения</string>
+    <string name="birth_place">Место рождения</string>
+    <string name="citizinship">Гражданство</string>
+    <string name="drive_expirience">Опыт вождения</string>
+    <string name="passport">Паспорт:</string>
+    <string name="pass_number">Номер:</string>
+    <string name="pass_serial">Серия</string>
+    <string name="pass_date">Дата Выдачи</string>
 </resources>

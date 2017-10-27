@@ -5,6 +5,7 @@ import com.example.ruslanio.androidhackaton.api.authorization.models.SignInReque
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.RegistrationResponse;
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.SignInResponse;
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.cars.CarsResponse;
+import com.example.ruslanio.androidhackaton.api.authorization.pojo.user.UserResponse;
 
 import io.reactivex.Observable;
 import retrofit2.http.Body;
@@ -26,4 +27,7 @@ public interface NetworkCalls {
 
     @GET("/secure/v1/user/cars")
     Observable<CarsResponse> getCars(@Header("Authorization") String token);
+
+    @GET("/secure/v1/user")
+    Observable<UserResponse> getUser(@Header("Authorization") String token);
 }
