@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.ruslanio.androidhackaton.R;
+import com.example.ruslanio.androidhackaton.api.authorization.pojo.cars.ResponseDatum;
 
 import java.util.Collections;
 import java.util.List;
@@ -19,9 +20,9 @@ import butterknife.BindView;
 
 public class CarAdapter extends RecyclerView.Adapter {
 
-    private List mCars = Collections.emptyList();
+    private List<ResponseDatum> mCars = Collections.emptyList();
 
-    public void setCars(List cars) {
+    public void setCars(List<ResponseDatum> cars) {
         mCars = cars;
         notifyDataSetChanged();
     }
@@ -34,7 +35,7 @@ public class CarAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
+        ((CarViewHolder) holder).bind(position);
     }
 
     @Override
@@ -75,6 +76,18 @@ public class CarAdapter extends RecyclerView.Adapter {
         }
 
         void bind(int position){
+            ResponseDatum car = mCars.get(position);
+            mMark.setText(car.getCarMark());
+            mModel.setText(car.getCarModel());
+            mRegNumber.setText(car.getCarNumber());
+            mReleaseYear.setText(car.getCarYearOfBuilding());
+            mHorsePower.setText(car.getHorsePower());
+            mInsuranceNumber.setText(car.getInsurancePolicyNumber());
+            mInsuranceSerial.setText(car.getInsurancePolicySerial());
+            mPtsNumber.setText(car.getPtsNumber());
+            mPtsSerial.setText(car.getPtsSerialNumber());
+            mVinNumber.setText(car.getVinNumber());
+            mPtsByWho.setText(car.getWhoGivedPts());
 
         }
     }

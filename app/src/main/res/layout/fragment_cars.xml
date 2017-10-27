@@ -5,11 +5,12 @@
               android:orientation="vertical"
     android:background="@color/grey_background">
 
-    <TextView
-        style="@style/Label"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_cars"
+        android:padding="@dimen/tab_item_padding"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="CARS"/>
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

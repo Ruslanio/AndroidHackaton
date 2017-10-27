@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
 import com.example.ruslanio.androidhackaton.abstracts.BaseActivity;
-import com.example.ruslanio.androidhackaton.api.authorization.AuthorizationManager;
+import com.example.ruslanio.androidhackaton.api.authorization.NetworkManager;
 import com.example.ruslanio.androidhackaton.fragments.CarsView;
 import com.example.ruslanio.androidhackaton.fragments.HomeView;
 import com.example.ruslanio.androidhackaton.fragments.MapView;
@@ -40,7 +40,7 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener {
 
     private String getToken(){
         mPreferences = getSharedPreferences(MAIN_PREF_NAME,MODE_PRIVATE);
-        String token = mPreferences.getString(AuthorizationManager.KEY_TOKEN,"no token");
+        String token = mPreferences.getString(NetworkManager.KEY_TOKEN,"no token");
         return token;
     }
 
