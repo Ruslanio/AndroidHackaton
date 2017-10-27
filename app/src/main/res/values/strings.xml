@@ -12,5 +12,21 @@
     <string name="middle_name">Отчество</string>
     <string name="phone">Телефон</string>
 
-    <string name="signin_error">Ошибка авторизации. Попробуйте снова!</string>
+    <string name="signin_error">Ошибка авторизации. Попробуйте снова!</string>\
+
+    <string name="birth_place_label">Место рождения</string>
+    <string name="birthday_label">День рождения</string>
+    <string name="citizenship_label">Гражданство</string>
+    <string name="experience_label">Стаж вождения</string>
+    <string name="gender_male_label">Мужчина</string>
+    <string name="gender_female_label">Женщина</string>
+    <string name="inn_label">ИНН</string>
+    <string name="licence_number_label">Номер лицензии</string>
+    <string name="licence_serial_label">Серия лицензии</string>
+    <string name="pass_getting_date_label">Дата получения паспорта</string>
+    <string name="pass_serial_label">Серия паспорта</string>
+    <string name="pass_number_label">Номер паспорта</string>
+    <string name="who_gave_pass_label">Кем выдан</string>
+    <string name="registration_address_label">Адрес регистрации</string>
+    <string name="snils">СНИЛС</string>
 </resources>
