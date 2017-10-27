@@ -11,4 +11,18 @@
     <string name="last_name">Фамилия</string>
     <string name="middle_name">Отчество</string>
     <string name="phone">Телефон</string>
+
+    <string name="home">Главная</string>
+    <string name="cars">Машины</string>
+    <string name="personal">Личное</string>
+    <string name="map">Карта</string>
+    <string name="reg_number">Рег. Номер:</string>
+    <string name="year_of_release">Год выпуска:</string>
+    <string name="l_s">л.с.:</string>
+    <string name="insuranse_policy_number">Номер страхового полиса:</string>
+    <string name="insuranse_policy_serial">Серия страхового полиса:</string>
+    <string name="pts_number">Номер ПТС:</string>
+    <string name="pts_serial">Серия ПТС:</string>
+    <string name="vin_number">VIN номер:</string>
+    <string name="pts_from_who">ПТС кем выдан:</string>
 </resources>

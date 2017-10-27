@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tabs>
     <tab
-        id="@+id/tab_favorites"
-        icon="@drawable/ic_favorites"
-        title="Favorites" />
+        id="@+id/tab_home"
+        icon="@drawable/ic_home"
+        title="@string/home"/>
     <tab
-        id="@+id/tab_nearby"
-        icon="@drawable/ic_nearby"
-        title="Nearby" />
+        id="@+id/tab_cars"
+        icon="@drawable/ic_cars"
+        title="@string/cars"/>
     <tab
-        id="@+id/tab_friends"
-        icon="@drawable/ic_friends"
-        title="Friends" />
+        id="@+id/tab_personal"
+        icon="@drawable/ic_personal"
+        title="@string/personal"/>
+    <tab
+        id="@+id/tab_map"
+        icon="@drawable/ic_map"
+        title="@string/map"/>
 </tabs>
