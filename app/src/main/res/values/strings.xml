@@ -25,4 +25,6 @@
     <string name="pts_serial">Серия ПТС:</string>
     <string name="vin_number">VIN номер:</string>
     <string name="pts_from_who">ПТС кем выдан:</string>
+
+    <string name="signin_error">Ошибка авторизации. Попробуйте снова!</string>
 </resources>

@@ -40,6 +40,12 @@ public class RegistrationActivity extends BaseActivity implements View.OnClickLi
     protected void onInit() {
         mRegister.setOnClickListener(this);
         mAuthorizationManager = new AuthorizationManager();
+
+        mPreferences = getSharedPreferences(MAIN_PREF_NAME, MODE_PRIVATE);
+
+        if (mPreferences.getBoolean(IS_REGISTERED_KEY, false)) {
+            goToLogin();
+        }
     }
 
     @Override
@@ -56,9 +62,9 @@ public class RegistrationActivity extends BaseActivity implements View.OnClickLi
                                     if (response.getResponseData() == null) {
                                         showSnackbar(response.getError());
                                     } else {
+                                        goToLogin();
                                         saveToken(response.getResponseData());
-                                        Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
-                                        startActivity(intent);
+                                        setRegisteredAndLogged();
                                     }
                                 }
                         );
@@ -67,10 +73,22 @@ public class RegistrationActivity extends BaseActivity implements View.OnClickLi
     }
 
     private void saveToken(String token) {
-        mPreferences = getSharedPreferences(MAIN_PREF_NAME,MODE_PRIVATE);
         SharedPreferences.Editor editor = mPreferences.edit();
         editor.putString(AuthorizationManager.KEY_TOKEN,token);
         editor.commit();
+    }
+
+    private void setRegisteredAndLogged() {
+        SharedPreferences.Editor editor = mPreferences.edit();
+        editor.putBoolean(IS_REGISTERED_KEY, true);
+        editor.putBoolean(IS_LOGGED_KEY, true);
+        editor.commit();
+    }
+
+    private void goToLogin() {
+        Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private RegistrationBodyRequest getData() {
