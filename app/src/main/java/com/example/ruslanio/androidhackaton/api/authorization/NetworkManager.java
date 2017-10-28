@@ -1,5 +1,6 @@
 package com.example.ruslanio.androidhackaton.api.authorization;
 
+import com.example.ruslanio.androidhackaton.api.authorization.models.IssueRoadAccident;
 import com.example.ruslanio.androidhackaton.api.authorization.models.PostCarRequest;
 import com.example.ruslanio.androidhackaton.api.authorization.models.PostPersonalDataRequest;
 import com.example.ruslanio.androidhackaton.api.authorization.models.RegistrationBodyRequest;
@@ -60,6 +61,10 @@ public class NetworkManager {
 
     public Observable<Response> addCar(String header, PostCarRequest request) {
         return mNetworkCalls.addCar(header, request);
+    }
+
+    public Observable<Response> addDtp(String token, IssueRoadAccident request){
+        return mNetworkCalls.addDtp(token,request);
     }
 
     public Observable<CarsResponse> getCars(String token){

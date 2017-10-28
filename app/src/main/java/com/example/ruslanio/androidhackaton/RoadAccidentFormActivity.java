@@ -16,6 +16,7 @@ import com.example.ruslanio.androidhackaton.adapters.CarSimpleAdapter;
 import com.example.ruslanio.androidhackaton.api.authorization.NetworkManager;
 import com.example.ruslanio.androidhackaton.api.authorization.models.IssueRoadAccident;
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.cars.ResponseDatum;
+import com.example.ruslanio.androidhackaton.api.authorization.pojo.user.ResponseData;
 
 import butterknife.BindView;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -23,7 +24,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 public class RoadAccidentFormActivity extends BaseActivity implements View.OnClickListener, CarSimpleAdapter.OnSimpleCarClickListener {
 
     @BindView(R.id.send_form)
-    private Button mSend;
+    Button mSend;
 
     @BindView(R.id.et_second_reg_number)
     TextInputEditText mSecondRegNumber;
@@ -59,6 +60,8 @@ public class RoadAccidentFormActivity extends BaseActivity implements View.OnCli
     private NetworkManager mNetworkManager;
     private boolean mIsCarChoosed = false;
     private CarSimpleAdapter mAdapter;
+    private ResponseDatum mChoosedCar;
+    private ResponseData mUser;
 
     @Override
     protected void onInit() {
@@ -69,6 +72,13 @@ public class RoadAccidentFormActivity extends BaseActivity implements View.OnCli
 
         mSimpleCars.setLayoutManager(new LinearLayoutManager(this));
         mSimpleCars.setAdapter(mAdapter);
+
+        mNetworkManager.getUser(getToken())
+                .observeOn(AndroidSchedulers.mainThread())
+                .map(userResponse -> userResponse.getResponseData())
+                .subscribe(responseData -> {
+                    mUser = responseData;
+                });
 
         mNetworkManager.getCars(getToken())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -93,6 +103,15 @@ public class RoadAccidentFormActivity extends BaseActivity implements View.OnCli
                     showSnackbar("Выберете машину!");
                     return;
                 }
+                mNetworkManager.addDtp(getToken(),getRequestBody())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(response -> {
+                            if (response.getResponseData() != null){
+                                showSnackbar(response.getResponseData());
+                            } else {
+                                showSnackbar(response.getError());
+                            }
+                        });
                 break;
         }
     }
@@ -100,6 +119,7 @@ public class RoadAccidentFormActivity extends BaseActivity implements View.OnCli
     @Override
     public void onCarClick(ResponseDatum car) {
         mIsCarChoosed = true;
+        mChoosedCar = car;
         mSimpleCars.setVisibility(View.GONE);
         mCarIsAdded.setVisibility(View.VISIBLE);
     }
@@ -112,6 +132,25 @@ public class RoadAccidentFormActivity extends BaseActivity implements View.OnCli
 
     private IssueRoadAccident getRequestBody(){
         IssueRoadAccident issueRoadAccident = new IssueRoadAccident();
+        issueRoadAccident.setDtpAddress(mDtpAddress.getText().toString());
+        issueRoadAccident.setSecondPhone(mSecondPhone.getText().toString());
+        issueRoadAccident.setSecondRegNumber(mSecondRegNumber.getText().toString());
+        issueRoadAccident.setVictims(mVictims.getText().toString());
+        issueRoadAccident.setWitnessName(mWitnessName.getText().toString());
+        issueRoadAccident.setWitnessAddress(mWitnessAddress.getText().toString());
+        if (mDamageToThings.isChecked())
+            issueRoadAccident.setDamageToThings(true);
+        else
+            issueRoadAccident.setDamageToThings(false);
+
+        if (mDamageToVehicles.isChecked())
+            issueRoadAccident.setDamageToVehicles(true);
+        else
+            issueRoadAccident.setDamageToVehicles(false);
+
+        issueRoadAccident.setFirstReg(mChoosedCar.getCarNumber().toString());
+        issueRoadAccident.setFirstPhone(mUser.getPhone().toString());
+
         return issueRoadAccident;
     }
 }

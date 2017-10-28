@@ -59,6 +59,7 @@ public class CarsView extends BaseFragment {
                 }, error -> {
                     error.printStackTrace();
                     showSnackbar("UNKNOWN ERROR");
+                    mAvailability.setVisibility(View.VISIBLE);
                 });
     }
 

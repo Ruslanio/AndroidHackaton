@@ -1,6 +1,8 @@
 package com.example.ruslanio.androidhackaton.fragments;
 
 import android.content.SharedPreferences;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.ruslanio.androidhackaton.R;
@@ -55,6 +57,13 @@ public class PersonalView extends BaseFragment {
     @BindView(R.id.tv_user_license_serial)
     TextView mLicenseSerial;
 
+    @BindView(R.id.person_info_panel)
+    View mMainPanel;
+    @BindView(R.id.pg_load)
+    ProgressBar mLoad;
+    @BindView(R.id.tv_personal_availability)
+    TextView mAvailability;
+
     @Override
     protected int getLayout() {
         return R.layout.fragment_personal;
@@ -63,12 +72,24 @@ public class PersonalView extends BaseFragment {
     @Override
     protected void onInit() {
         super.onInit();
+        mAvailability.setVisibility(View.GONE);
+        mLoad.setVisibility(View.VISIBLE);
         mNetworkManager = new NetworkManager();
         mNetworkManager.getUser(getToken())
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(response -> response.getResponseData())
                 .subscribe(
-                        user -> fillFields(user)
+                        user -> {
+                            fillFields(user);
+                            mLoad.setVisibility(View.GONE);
+                            mMainPanel.setVisibility(View.VISIBLE);
+                            mAvailability.setVisibility(View.GONE);
+                        }
+                        , error -> {{
+                            showSnackbar("UNKNOWN ERROR");
+                            mLoad.setVisibility(View.GONE);
+                            mAvailability.setVisibility(View.VISIBLE);
+                        }}
                 );
 
     }

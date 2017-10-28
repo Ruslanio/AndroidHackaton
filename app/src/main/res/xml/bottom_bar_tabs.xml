@@ -16,4 +16,9 @@
         id="@+id/tab_map"
         icon="@drawable/ic_map"
         title="@string/map"/>
+
+    <tab
+        id="@+id/tab_note"
+        icon="@drawable/ic_note"
+        title="@string/note_label"/>
 </tabs>

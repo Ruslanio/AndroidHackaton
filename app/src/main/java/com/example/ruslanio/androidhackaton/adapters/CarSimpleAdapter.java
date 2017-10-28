@@ -34,7 +34,7 @@ public class CarSimpleAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_sinple_car,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_simple_car,parent,false);
         return new CarSimpleViewHolder(view);
     }
 
@@ -59,6 +59,10 @@ public class CarSimpleAdapter extends RecyclerView.Adapter {
 
         public CarSimpleViewHolder(View itemView) {
             super(itemView);
+
+            mMark = (TextView) itemView.findViewById(R.id.tv_car_mark);
+            mModel = (TextView) itemView.findViewById(R.id.tv_car_model);
+            mRegNumber = (TextView) itemView.findViewById(R.id.tv_reg_number);
         }
 
         void bind(int position){

@@ -1,28 +1,45 @@
 package com.example.ruslanio.androidhackaton.api.authorization.models;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 /**
  * Created by Ruslanio on 28.10.2017.
  */
 
 public class IssueRoadAccident {
-    String secondRegNumber;
+    private String secondRegNumber;
 
-    String mSecondPhone;
+    private String mSecondPhone;
 
-    boolean mDamageToThings;
+    private boolean mDamageToThings;
 
-    boolean mDamageToVehicles;
+    private boolean mDamageToVehicles;
 
-    String mDtpAddress;
+    private String mDtpAddress;
 
-    String mVictims;
+    private String mVictims;
 
-    String mWitnessName;
+    private String mWitnessName;
 
-    String mWitnessAddress;
+    private String mWitnessAddress;
+
+    private String mFirstReg;
+
+    private String mFirstPhone;
+
+    public String getFirstReg() {
+        return mFirstReg;
+    }
+
+    public void setFirstReg(String firstReg) {
+        mFirstReg = firstReg;
+    }
+
+    public String getFirstPhone() {
+        return mFirstPhone;
+    }
+
+    public void setFirstPhone(String firstPhone) {
+        mFirstPhone = firstPhone;
+    }
 
     public String getSecondRegNumber() {
         return secondRegNumber;
