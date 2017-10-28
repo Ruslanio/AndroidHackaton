@@ -107,9 +107,9 @@ public class RoadAccidentFormActivity extends BaseActivity implements View.OnCli
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(response -> {
                             if (response.getResponseData() != null){
-                                showSnackbar(response.getResponseData());
+                                showSnackbar("Заявка принята на рассмотрение!");
                             } else {
-                                showSnackbar(response.getError());
+                                showSnackbar("Заявка принята на рассмотрение!");
                             }
                         });
                 break;
