@@ -66,7 +66,7 @@ public class AutoActivity extends BaseActivity {
             manager.addCar(preferences.getString(NetworkManager.KEY_TOKEN, ""), getData())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(response -> {
-                        if (response.getError() == null){
+                        if (response.getError() != null){
                             showSnackbar(response.getError());
                         } else {
                             setIsAuto();
