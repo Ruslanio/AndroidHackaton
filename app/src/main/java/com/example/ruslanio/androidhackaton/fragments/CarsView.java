@@ -3,6 +3,8 @@ package com.example.ruslanio.androidhackaton.fragments;
 import android.content.SharedPreferences;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.TextView;
 
 import com.example.ruslanio.androidhackaton.R;
 import com.example.ruslanio.androidhackaton.abstracts.BaseFragment;
@@ -22,6 +24,9 @@ public class CarsView extends BaseFragment {
 
     @BindView(R.id.rv_cars)
     RecyclerView mCarList;
+
+    @BindView(R.id.tv_cars_availability)
+    TextView mAvailability;
 
     private CarAdapter mAdapter;
     private NetworkManager mNetworkManager;
@@ -45,10 +50,15 @@ public class CarsView extends BaseFragment {
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(carsResponse -> carsResponse.getResponseData())
                 .subscribe(responseData -> {
+                    mAvailability.setVisibility(View.GONE);
                     mAdapter.setCars(responseData);
+                    if (responseData.size() == 0)
+                        mAvailability.setVisibility(View.VISIBLE);
+                    else
+                        mAvailability.setVisibility(View.GONE);
                 }, error -> {
                     error.printStackTrace();
-                    showSnackbar(error.getMessage());
+                    showSnackbar("UNKNOWN ERROR");
                 });
     }
 

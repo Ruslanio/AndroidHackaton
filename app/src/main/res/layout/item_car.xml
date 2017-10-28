@@ -39,18 +39,16 @@
 
             <TextView
                 style="@style/Label.Bold"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:text="@string/reg_number"
                 android:textSize="@dimen/large_text_size"/>
 
             <TextView
                 android:id="@+id/tv_car_number"
                 style="@style/Label"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="е777кх166"/>
 
         </LinearLayout>
@@ -64,18 +62,16 @@
 
             <TextView
                 style="@style/Label.Bold"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:text="@string/year_of_release"
                 android:textSize="@dimen/large_text_size"/>
 
             <TextView
                 android:id="@+id/tv_car_release_year"
                 style="@style/Label"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="1997"/>
         </LinearLayout>
 

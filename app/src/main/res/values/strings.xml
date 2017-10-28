@@ -52,4 +52,6 @@
     <string name="pass_number">Номер:</string>
     <string name="pass_serial">Серия</string>
     <string name="pass_date">Дата Выдачи</string>
+    <string name="pass_who">Кем выдан</string>
+    <string name="issue_road_accident">Оформить ДТП</string>
 </resources>
