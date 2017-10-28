@@ -1,5 +1,6 @@
 package com.example.ruslanio.androidhackaton.api.authorization;
 
+import com.example.ruslanio.androidhackaton.api.authorization.models.PostCarRequest;
 import com.example.ruslanio.androidhackaton.api.authorization.models.PostPersonalDataRequest;
 import com.example.ruslanio.androidhackaton.api.authorization.models.RegistrationBodyRequest;
 import com.example.ruslanio.androidhackaton.api.authorization.models.SignInRequest;
@@ -29,6 +30,9 @@ public interface NetworkCalls {
 
     @POST("/secure/v1/user/data")
     Observable<Response> addPersonal(@Header("Authorization") String token, @Body PostPersonalDataRequest request);
+
+    @POST("/secure/v1/user/cars")
+    Observable<Response> addCar(@Header("Authorization") String token, @Body PostCarRequest request);
 
     @GET("/secure/v1/user/cars")
     Observable<CarsResponse> getCars(@Header("Authorization") String token);

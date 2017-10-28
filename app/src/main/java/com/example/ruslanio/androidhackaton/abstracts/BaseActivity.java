@@ -21,6 +21,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     public static final String IS_REGISTERED_KEY = "is_registered";
     public static final String IS_LOGGED_KEY = "is_logged";
     public static final String IS_PERSONAL = "is_personal";
+    public static final String IS_AUTO = "is_auto";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
