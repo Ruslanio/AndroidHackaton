@@ -8,6 +8,8 @@ import com.example.ruslanio.androidhackaton.api.authorization.pojo.RegistrationR
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.Response;
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.SignInResponse;
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.cars.CarsResponse;
+import com.example.ruslanio.androidhackaton.api.authorization.pojo.currentaccidents.CurrentAccidentsResponse;
+import com.example.ruslanio.androidhackaton.api.authorization.pojo.dangerousareas.DangerousAreasResponse;
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.user.UserResponse;
 
 import io.reactivex.Observable;
@@ -39,4 +41,12 @@ public interface NetworkCalls {
 
     @GET("/secure/v1/user")
     Observable<UserResponse> getUser(@Header("Authorization") String token);
+
+    @GET("/secure/v1/dtp/last")
+    Observable<CurrentAccidentsResponse> getCurrentAccidents(@Header("Authorization") String token);
+
+    @GET("/secure/v1/dangerous")
+    Observable<DangerousAreasResponse> getDangerousAreas(@Header("Authorization") String token);
+
+
 }

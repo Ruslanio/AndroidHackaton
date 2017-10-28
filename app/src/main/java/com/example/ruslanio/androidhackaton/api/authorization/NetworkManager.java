@@ -8,6 +8,8 @@ import com.example.ruslanio.androidhackaton.api.authorization.pojo.RegistrationR
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.Response;
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.SignInResponse;
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.cars.CarsResponse;
+import com.example.ruslanio.androidhackaton.api.authorization.pojo.currentaccidents.CurrentAccidentsResponse;
+import com.example.ruslanio.androidhackaton.api.authorization.pojo.dangerousareas.DangerousAreasResponse;
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.user.UserResponse;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
@@ -68,5 +70,13 @@ public class NetworkManager {
 
     public Observable<UserResponse> getUser(String token){
         return mNetworkCalls.getUser(token);
+    }
+
+    public Observable<CurrentAccidentsResponse> getCurrentAccident(String token) {
+        return mNetworkCalls.getCurrentAccidents(token);
+    }
+
+    public Observable<DangerousAreasResponse> getDangerousAreas(String token) {
+        return mNetworkCalls.getDangerousAreas(token);
     }
 }
