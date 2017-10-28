@@ -13,6 +13,7 @@ import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by Ruslanio on 27.10.2017.
@@ -29,7 +30,7 @@ public class CarAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_car,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_car, parent, false);
         return new CarViewHolder(view);
     }
 
@@ -40,10 +41,7 @@ public class CarAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        if (mCars == null)
-            return 0;
-        else
-            return mCars.size();
+        return mCars.size();
     }
 
     class CarViewHolder extends RecyclerView.ViewHolder {
@@ -73,21 +71,24 @@ public class CarAdapter extends RecyclerView.Adapter {
 
         public CarViewHolder(View itemView) {
             super(itemView);
+            ButterKnife.bind(this, itemView);
         }
 
-        void bind(int position){
+        void bind(int position) {
             ResponseDatum car = mCars.get(position);
-            mMark.setText(car.getCarMark());
-            mModel.setText(car.getCarModel());
-            mRegNumber.setText(car.getCarNumber());
-            mReleaseYear.setText(car.getCarYearOfBuilding());
-            mHorsePower.setText(car.getHorsePower());
-            mInsuranceNumber.setText(car.getInsurancePolicyNumber());
-            mInsuranceSerial.setText(car.getInsurancePolicySerial());
-            mPtsNumber.setText(car.getPtsNumber());
-            mPtsSerial.setText(car.getPtsSerialNumber());
-            mVinNumber.setText(car.getVinNumber());
-            mPtsByWho.setText(car.getWhoGivedPts());
+
+            System.out.println("PTSSERIALNUMBER = " + car.getPtsSerialNumber());
+            mMark.setText(car.getCarMark().toString());
+            mModel.setText(car.getCarModel().toString());
+            mRegNumber.setText(car.getCarNumber().toString());
+            mReleaseYear.setText(car.getCarYearOfBuilding().toString());
+            mHorsePower.setText(car.getHorsePower().toString());
+            mInsuranceNumber.setText(car.getInsurancePolicyNumber().toString());
+            mInsuranceSerial.setText(car.getInsurancePolicySerial().toString());
+            mPtsNumber.setText(car.getPtsNumber().toString());
+            mPtsSerial.setText(car.getPtsSerialNumber().toString());
+            mVinNumber.setText(car.getVinNumber().toString());
+            mPtsByWho.setText(car.getWhoGivedPts().toString());
 
         }
     }

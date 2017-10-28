@@ -36,9 +36,6 @@ public class ResponseDatum {
     @SerializedName("ptsSerialNumber")
     @Expose
     private String ptsSerialNumber;
-    @SerializedName("user")
-    @Expose
-    private User user;
     @SerializedName("vinNumber")
     @Expose
     private String vinNumber;
@@ -124,14 +121,6 @@ public class ResponseDatum {
 
     public void setPtsSerialNumber(String ptsSerialNumber) {
         this.ptsSerialNumber = ptsSerialNumber;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public String getVinNumber() {
