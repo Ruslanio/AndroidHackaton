@@ -1,8 +1,11 @@
 package com.example.ruslanio.androidhackaton.api.authorization;
 
+import com.example.ruslanio.androidhackaton.api.authorization.models.PostCarRequest;
+import com.example.ruslanio.androidhackaton.api.authorization.models.PostPersonalDataRequest;
 import com.example.ruslanio.androidhackaton.api.authorization.models.RegistrationBodyRequest;
 import com.example.ruslanio.androidhackaton.api.authorization.models.SignInRequest;
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.RegistrationResponse;
+import com.example.ruslanio.androidhackaton.api.authorization.pojo.Response;
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.SignInResponse;
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.cars.CarsResponse;
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.user.UserResponse;
@@ -24,6 +27,12 @@ public interface NetworkCalls {
 
     @POST("/v1/sign_in")
     Observable<SignInResponse> signIn(@Body SignInRequest request);
+
+    @POST("/secure/v1/user/data")
+    Observable<Response> addPersonal(@Header("Authorization") String token, @Body PostPersonalDataRequest request);
+
+    @POST("/secure/v1/user/cars")
+    Observable<Response> addCar(@Header("Authorization") String token, @Body PostCarRequest request);
 
     @GET("/secure/v1/user/cars")
     Observable<CarsResponse> getCars(@Header("Authorization") String token);

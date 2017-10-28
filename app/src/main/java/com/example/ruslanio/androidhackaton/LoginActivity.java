@@ -45,8 +45,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_sign_in:
-                Intent intent1 = new Intent(LoginActivity.this,MainActivity.class);
-                startActivity(intent1);
                 signIn();
                 break;
             case R.id.btn_sign_up:
@@ -67,9 +65,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         mRegistration.setText("");
                         showSnackbar(R.string.signin_error);
                     } else {
-                        goToPersonal();
                         saveToken(signInResponse.getResponseData());
                         setLogged();
+                        goToPersonal();
                     }
                 });
     }

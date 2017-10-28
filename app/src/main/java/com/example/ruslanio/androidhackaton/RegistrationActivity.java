@@ -47,7 +47,7 @@ public class RegistrationActivity extends BaseActivity implements View.OnClickLi
 
         mPreferences = getSharedPreferences(MAIN_PREF_NAME, MODE_PRIVATE);
 
-        if (mPreferences.getBoolean(IS_REGISTERED_KEY, false)) {
+        if (mPreferences.getBoolean(IS_REGISTERED_KEY, false) || mPreferences.getBoolean(IS_LOGGED_KEY, false)) {
             goToLogin();
         }
     }
@@ -67,9 +67,9 @@ public class RegistrationActivity extends BaseActivity implements View.OnClickLi
                                     if (response.getResponseData() == null) {
                                         showSnackbar(response.getError());
                                     } else {
-                                        goToLogin();
                                         saveToken(response.getResponseData());
                                         setRegisteredAndLogged();
+                                        goToLogin();
                                     }
                                 }
                         );
