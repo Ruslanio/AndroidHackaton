@@ -11,7 +11,7 @@
     <string name="last_name">Фамилия</string>
     <string name="middle_name">Отчество</string>
     <string name="phone">Телефон</string>
-    
+
 
     <string name="birth_place_label">Место рождения</string>
     <string name="birthday_label">День рождения</string>
@@ -53,4 +53,5 @@
     <string name="pass_serial">Серия</string>
     <string name="pass_date">Дата Выдачи</string>
     <string name="pass_who">Кем выдан</string>
+    <string name="issue_road_accident">Оформить ДТП</string>
 </resources>

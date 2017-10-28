@@ -1,36 +1,23 @@
 
 package com.example.ruslanio.androidhackaton.api.authorization.pojo.user;
 
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class ResponseData {
 
-    @SerializedName("acceptPersonalDataTreatment")
-    @Expose
-    private Boolean acceptPersonalDataTreatment;
-    @SerializedName("avatarUrl")
-    @Expose
-    private String avatarUrl;
     @SerializedName("birthPlace")
     @Expose
     private String birthPlace;
     @SerializedName("birthday")
     @Expose
     private String birthday;
-    @SerializedName("cars")
-    @Expose
-    private List<Car> cars = null;
     @SerializedName("citizenship")
     @Expose
     private String citizenship;
     @SerializedName("drivingExperience")
     @Expose
     private String drivingExperience;
-    @SerializedName("dtps")
-    @Expose
-    private List<Dtp> dtps = null;
     @SerializedName("email")
     @Expose
     private String email;
@@ -40,9 +27,6 @@ public class ResponseData {
     @SerializedName("gender")
     @Expose
     private String gender;
-    @SerializedName("id")
-    @Expose
-    private Integer id;
     @SerializedName("inn")
     @Expose
     private String inn;
@@ -70,54 +54,18 @@ public class ResponseData {
     @SerializedName("password")
     @Expose
     private String password;
-    @SerializedName("passwordRecoveryCode")
-    @Expose
-    private Integer passwordRecoveryCode;
     @SerializedName("phone")
     @Expose
     private String phone;
     @SerializedName("registrationAdress")
     @Expose
     private String registrationAdress;
-    @SerializedName("role")
-    @Expose
-    private String role;
     @SerializedName("snils")
     @Expose
     private String snils;
-    @SerializedName("verificationCode")
-    @Expose
-    private String verificationCode;
-    @SerializedName("verified")
-    @Expose
-    private Boolean verified;
     @SerializedName("whoGivedPass")
     @Expose
     private String whoGivedPass;
-
-    public String getPassNumber() {
-        return passNumber;
-    }
-
-    public void setPassNumber(String passNumber) {
-        this.passNumber = passNumber;
-    }
-
-    public Boolean getAcceptPersonalDataTreatment() {
-        return acceptPersonalDataTreatment;
-    }
-
-    public void setAcceptPersonalDataTreatment(Boolean acceptPersonalDataTreatment) {
-        this.acceptPersonalDataTreatment = acceptPersonalDataTreatment;
-    }
-
-    public String getAvatarUrl() {
-        return avatarUrl;
-    }
-
-    public void setAvatarUrl(String avatarUrl) {
-        this.avatarUrl = avatarUrl;
-    }
 
     public String getBirthPlace() {
         return birthPlace;
@@ -135,14 +83,6 @@ public class ResponseData {
         this.birthday = birthday;
     }
 
-    public List<Car> getCars() {
-        return cars;
-    }
-
-    public void setCars(List<Car> cars) {
-        this.cars = cars;
-    }
-
     public String getCitizenship() {
         return citizenship;
     }
@@ -157,14 +97,6 @@ public class ResponseData {
 
     public void setDrivingExperience(String drivingExperience) {
         this.drivingExperience = drivingExperience;
-    }
-
-    public List<Dtp> getDtps() {
-        return dtps;
-    }
-
-    public void setDtps(List<Dtp> dtps) {
-        this.dtps = dtps;
     }
 
     public String getEmail() {
@@ -189,14 +121,6 @@ public class ResponseData {
 
     public void setGender(String gender) {
         this.gender = gender;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getInn() {
@@ -247,6 +171,14 @@ public class ResponseData {
         this.passGettingDate = passGettingDate;
     }
 
+    public String getPassNumber() {
+        return passNumber;
+    }
+
+    public void setPassNumber(String passNumber) {
+        this.passNumber = passNumber;
+    }
+
     public String getPassSeria() {
         return passSeria;
     }
@@ -261,14 +193,6 @@ public class ResponseData {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Integer getPasswordRecoveryCode() {
-        return passwordRecoveryCode;
-    }
-
-    public void setPasswordRecoveryCode(Integer passwordRecoveryCode) {
-        this.passwordRecoveryCode = passwordRecoveryCode;
     }
 
     public String getPhone() {
@@ -287,36 +211,12 @@ public class ResponseData {
         this.registrationAdress = registrationAdress;
     }
 
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
     public String getSnils() {
         return snils;
     }
 
     public void setSnils(String snils) {
         this.snils = snils;
-    }
-
-    public String getVerificationCode() {
-        return verificationCode;
-    }
-
-    public void setVerificationCode(String verificationCode) {
-        this.verificationCode = verificationCode;
-    }
-
-    public Boolean getVerified() {
-        return verified;
-    }
-
-    public void setVerified(Boolean verified) {
-        this.verified = verified;
     }
 
     public String getWhoGivedPass() {
