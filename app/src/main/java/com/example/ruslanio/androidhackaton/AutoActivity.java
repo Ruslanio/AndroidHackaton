@@ -66,7 +66,7 @@ public class AutoActivity extends BaseActivity {
             manager.addCar(preferences.getString(NetworkManager.KEY_TOKEN, ""), getData())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(response -> {
-                        if (response.getError() != null){
+                        if (response.getError() == null){
                             showSnackbar(response.getError());
                         } else {
                             setIsAuto();
@@ -83,17 +83,21 @@ public class AutoActivity extends BaseActivity {
 
     public PostCarRequest getData() {
         PostCarRequest postCarRequest = new PostCarRequest();
-        postCarRequest.setCarMark(mMark.getText().toString());
-        postCarRequest.setCarModel(mModel.getText().toString());
-        postCarRequest.setCarNumber(mRegNumber.getText().toString());
-        postCarRequest.setCarYearOfBuilding(mYear.getText().toString());
-        postCarRequest.setHorsePower(Integer.parseInt(mHorsePower.getText().toString()));
-        postCarRequest.setInsurancePolicyNumber(mInsuranceNumber.getText().toString());
-        postCarRequest.setInsurancePolicySerial(mInsuranceSerial.getText().toString());
-        postCarRequest.setVinNumber(mVinNumber.getText().toString());
-        postCarRequest.setPtsNumber(mPtsNumber.getText().toString());
-        postCarRequest.setPtsSerialNumber(mPtsSerial.getText().toString());
-        postCarRequest.setWhoGivedPts(mPtsWho.getText().toString());
+        try {
+            postCarRequest.setCarMark(mMark.getText().toString());
+            postCarRequest.setCarModel(mModel.getText().toString());
+            postCarRequest.setCarNumber(mRegNumber.getText().toString());
+            postCarRequest.setCarYearOfBuilding(mYear.getText().toString());
+            postCarRequest.setHorsePower(Integer.parseInt(mHorsePower.getText().toString()));
+            postCarRequest.setInsurancePolicyNumber(mInsuranceNumber.getText().toString());
+            postCarRequest.setInsurancePolicySerial(mInsuranceSerial.getText().toString());
+            postCarRequest.setVinNumber(mVinNumber.getText().toString());
+            postCarRequest.setPtsNumber(mPtsNumber.getText().toString());
+            postCarRequest.setPtsSerialNumber(mPtsSerial.getText().toString());
+            postCarRequest.setWhoGivedPts(mPtsWho.getText().toString());
+        } catch (NumberFormatException e){
+            showSnackbar("Одно из полей введено неправильно");
+        }
         return postCarRequest;
     }
 
