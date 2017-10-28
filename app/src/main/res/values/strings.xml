@@ -54,4 +54,19 @@
     <string name="pass_date">Дата Выдачи</string>
     <string name="pass_who">Кем выдан</string>
     <string name="issue_road_accident">Оформить ДТП</string>
+    <string name="mark">Марка</string>
+    <string name="model">Модель</string>
+    <string name="horse_power">Л.С.</string>
+    <string name="add_vehicle">Добавьте транспортное средство</string>
+    <string name="send_form">Отправить форму</string>
+    <string name="enter_second_user_data">Введите данные второго участника ДТП</string>
+    <string name="reg_number_of_vehicle">Регистрационный номер ТС</string>
+    <string name="enter_general_data">Введите общие данные</string>
+    <string name="material_damage_to_different_things">Материальный ущерб, нанесенный другому имуществу</string>
+    <string name="material_damage_to_transport_except_a_and_b">Материальный ущерб , нанесенный другим ТС</string>
+    <string name="dtp_address">Адрес ДТП</string>
+    <string name="enter_witness_and_victim_data">Введите данные о пострадавших и очевидцах</string>
+    <string name="victim_count">Количество пострадавших</string>
+    <string name="witness_name">Полное имя очевидца</string>
+    <string name="witness_address">Адрес очевидца</string>
 </resources>

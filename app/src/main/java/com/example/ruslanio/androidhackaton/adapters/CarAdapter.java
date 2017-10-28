@@ -22,10 +22,15 @@ import butterknife.ButterKnife;
 public class CarAdapter extends RecyclerView.Adapter {
 
     private List<ResponseDatum> mCars = Collections.emptyList();
+    private OnCarClickListener mOnCarClickListener;
 
     public void setCars(List<ResponseDatum> cars) {
         mCars = cars;
         notifyDataSetChanged();
+    }
+
+    public void setOnCarClickListener(OnCarClickListener onCarClickListener) {
+        mOnCarClickListener = onCarClickListener;
     }
 
     @Override
@@ -90,6 +95,15 @@ public class CarAdapter extends RecyclerView.Adapter {
             mVinNumber.setText(car.getVinNumber().toString());
             mPtsByWho.setText(car.getWhoGivedPts().toString());
 
+            itemView.setOnClickListener(item -> {
+                if (mOnCarClickListener != null)
+                    mOnCarClickListener.onCarClick(mCars.get(position));
+            });
+
         }
+    }
+
+    public interface OnCarClickListener{
+        void onCarClick(ResponseDatum car);
     }
 }
