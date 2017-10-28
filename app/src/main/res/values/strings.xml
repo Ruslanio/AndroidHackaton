@@ -11,7 +11,7 @@
     <string name="last_name">Фамилия</string>
     <string name="middle_name">Отчество</string>
     <string name="phone">Телефон</string>
-    
+
 
     <string name="birth_place_label">Место рождения</string>
     <string name="birthday_label">День рождения</string>

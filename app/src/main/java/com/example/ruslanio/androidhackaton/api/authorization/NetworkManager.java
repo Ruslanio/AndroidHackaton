@@ -1,8 +1,10 @@
 package com.example.ruslanio.androidhackaton.api.authorization;
 
+import com.example.ruslanio.androidhackaton.api.authorization.models.PostPersonalDataRequest;
 import com.example.ruslanio.androidhackaton.api.authorization.models.RegistrationBodyRequest;
 import com.example.ruslanio.androidhackaton.api.authorization.models.SignInRequest;
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.RegistrationResponse;
+import com.example.ruslanio.androidhackaton.api.authorization.pojo.Response;
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.SignInResponse;
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.cars.CarsResponse;
 import com.example.ruslanio.androidhackaton.api.authorization.pojo.user.UserResponse;
@@ -49,6 +51,10 @@ public class NetworkManager {
 
     public Observable<SignInResponse> signIn(SignInRequest request) {
         return mNetworkCalls.signIn(request);
+    }
+
+    public Observable<Response> addPersonal(String header, PostPersonalDataRequest request) {
+        return mNetworkCalls.addPersonal(header, request);
     }
 
     public Observable<CarsResponse> getCars(String token){

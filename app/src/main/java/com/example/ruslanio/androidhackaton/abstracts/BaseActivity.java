@@ -20,6 +20,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected static final String MAIN_PREF_NAME = "main_pref";
     public static final String IS_REGISTERED_KEY = "is_registered";
     public static final String IS_LOGGED_KEY = "is_logged";
+    public static final String IS_PERSONAL = "is_personal";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
