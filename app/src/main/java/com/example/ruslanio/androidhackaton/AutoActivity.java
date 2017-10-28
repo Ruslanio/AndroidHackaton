@@ -47,7 +47,7 @@ public class AutoActivity extends BaseActivity {
     }
 
     public PostCarRequest getData() {
-
+        return new PostCarRequest(); //
     }
 
     private void setIsAuto() {
