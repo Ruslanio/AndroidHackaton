@@ -12,6 +12,8 @@
     <color name="inactive_grey">#bdbdbd</color>
     <color name="active_white">#ffffff</color>
 
+    <color name="car_choosed">#6d000000</color>
+
     <color name="grey_background">#e0e0e0</color>
     <color name="statistic_item_divider_background">#9e9e9e</color>
 </resources>

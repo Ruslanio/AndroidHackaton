@@ -127,7 +127,7 @@ public class PersonalActivity extends BaseActivity {
     }
 
     private void goToAuto() {
-        Intent goToAuto = new Intent(getApplicationContext(), MainActivity.class); //TODO change activity
+        Intent goToAuto = new Intent(getApplicationContext(), AutoActivity.class);
         startActivity(goToAuto);
     }
 

@@ -10,6 +10,7 @@ import com.example.ruslanio.androidhackaton.api.authorization.NetworkManager;
 import com.example.ruslanio.androidhackaton.fragments.CarsView;
 import com.example.ruslanio.androidhackaton.fragments.HomeView;
 import com.example.ruslanio.androidhackaton.fragments.MapView;
+import com.example.ruslanio.androidhackaton.fragments.NoteView;
 import com.example.ruslanio.androidhackaton.fragments.PersonalView;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
@@ -22,6 +23,7 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener {
     private static final String TAG_HOME = "tag_home";
     private static final String TAG_CARS = "tag_cars";
     private static final String TAG_PERSONAL = "tag_personal";
+    private static final String TAG_NOTE = "tag_note";
 
     private SharedPreferences mPreferences;
 
@@ -59,7 +61,23 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener {
             case R.id.tab_personal:
                 showPersonal();
                 break;
+            case R.id.tab_note:
+                showNote();
+                break;
         }
+    }
+
+    private void showNote() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment note = fragmentManager.findFragmentByTag(TAG_NOTE);
+        if (note == null)
+            note = NoteView.getInstance();
+        if (!note.isAdded())
+            fragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container_main,note,TAG_NOTE)
+                    .commit();
+
     }
 
     private void showMap() {

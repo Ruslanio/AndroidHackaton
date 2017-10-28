@@ -9,38 +9,26 @@ import com.google.gson.annotations.SerializedName;
 
 public class PostCarRequest {
 
-    @SerializedName("carMark")
-    @Expose
     private String carMark;
-    @SerializedName("carModel")
-    @Expose
+
     private String carModel;
-    @SerializedName("carNumber")
-    @Expose
+
     private String carNumber;
-    @SerializedName("carYearOfBuilding")
-    @Expose
+
     private String carYearOfBuilding;
-    @SerializedName("horsePower")
-    @Expose
+
     private Integer horsePower;
-    @SerializedName("insurancePolicyNumber")
-    @Expose
+
     private String insurancePolicyNumber;
-    @SerializedName("insurancePolicySerial")
-    @Expose
+
     private String insurancePolicySerial;
-    @SerializedName("ptsNumber")
-    @Expose
+
     private String ptsNumber;
-    @SerializedName("ptsSerialNumber")
-    @Expose
+
     private String ptsSerialNumber;
-    @SerializedName("vinNumber")
-    @Expose
+
     private String vinNumber;
-    @SerializedName("whoGivedPts")
-    @Expose
+
     private String whoGivedPts;
 
     public String getCarMark() {
